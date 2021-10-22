@@ -1,4 +1,5 @@
 import { Steps, Button, message } from 'antd';
+import { useHistory } from "react-router-dom";
 import React from 'react'
 import './Steps.css'
 
@@ -30,6 +31,7 @@ export const steps = [
 ];
 const StepComponent = () => {
   const [current, setCurrent] = React.useState(0);
+  const history = useHistory();
 
   const next = () => {
     setCurrent(current + 1);
@@ -37,6 +39,11 @@ const StepComponent = () => {
 
   const prev = () => {
     setCurrent(current - 1);
+  };
+
+  const done = () => {
+    message.success('Processing complete!');
+    history.push('/status');
   };
 
   return (
@@ -48,19 +55,19 @@ const StepComponent = () => {
       </Steps>
       <div className="steps-content">{steps[current].content}</div>
       <div className="steps-action">
+      {current > 0 && (
+          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+            Previous
+          </Button>
+        )}
         {current < steps.length - 1 && (
           <Button type="primary" onClick={() => next()}>
             Next
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success('Processing complete!')}>
+          <Button type="primary" onClick={done}>
             Done
-          </Button>
-        )}
-        {current > 0 && (
-          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-            Previous
           </Button>
         )}
       </div>

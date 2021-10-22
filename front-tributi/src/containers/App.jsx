@@ -8,6 +8,7 @@ import Footer from '../components/layout/Footer/Footer'
 import MainContainer from '../components/layout/MainContainer/MainContainer'
 import MainContent from '../components/layout/MainContent/MainContent'
 import StepComponent from '../components/Steps/Steps'
+import Status from '../components/Status/Status'
 import "../assets/static/logo (3).jpg"
 
 function App() {
@@ -15,9 +16,18 @@ function App() {
 
     <MainContainer>
       <Header />
-      <MainContent>
-        <StepComponent />
-      </MainContent>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <MainContent>
+              <StepComponent />
+            </MainContent>
+          </Route>
+          <Route exact path='/status'>
+            <Status />
+          </Route>
+        </Switch>
+      </Router>
       <Footer/>
     </MainContainer>
     );

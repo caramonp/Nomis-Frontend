@@ -18,14 +18,14 @@ function App() {
       <Header />
       <Router>
         <Switch>
+          <MainContent>
           <Route exact path='/'>
-            <MainContent>
               <StepComponent />
-            </MainContent>
           </Route>
           <Route exact path='/status'>
             <Status />
           </Route>
+          </MainContent>
         </Switch>
       </Router>
       <Footer/>

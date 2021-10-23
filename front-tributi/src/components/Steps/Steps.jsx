@@ -2,6 +2,8 @@ import { Steps, Button, message } from 'antd';
 import { useHistory } from "react-router-dom";
 import React from 'react'
 import './Steps.css'
+import TaxFile from '../TaxFile/TaxFile';
+import LightweightFileComponent from '../LightweightFile/LightweightFile'
 
 
 const { Step } = Steps;
@@ -9,7 +11,7 @@ const { Step } = Steps;
 export const steps = [
   {
     title: 'Tax file',
-    content: 'Tax File',
+    content: <TaxFile />,
     
   },
   {
@@ -22,7 +24,7 @@ export const steps = [
   },
   {
     title: 'Lightweight file',
-    content: 'Last-content',
+    content: <LightweightFileComponent />,
   },
   {
     title: 'Configuration',
@@ -53,21 +55,22 @@ const StepComponent = () => {
           <Step key={item.title} title={item.title} />
         ))}
       </Steps>
+      <div className="line-over-button"></div>
       <div className="steps-content">{steps[current].content}</div>
       <div className="steps-action">
       {current > 0 && (
           <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-            Previous
+            Previo
           </Button>
         )}
         {current < steps.length - 1 && (
-          <Button type="primary" onClick={() => next()}>
-            Next
+          <Button style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={() => next()}>
+            Siguiente
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={done}>
-            Done
+          <Button style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={done}>
+            Terminar
           </Button>
         )}
       </div>

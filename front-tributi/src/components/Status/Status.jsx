@@ -67,7 +67,13 @@ export const Status = (props) => {
              
             </div>
         ))}
-      
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        <button onClick={() => setValueEnd(valueEnd + 10)}>Change valueEnd</button>
         </div>
     )
 }

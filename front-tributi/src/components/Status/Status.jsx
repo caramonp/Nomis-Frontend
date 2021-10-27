@@ -25,8 +25,50 @@ export const Status = (props) => {
   }, []);
 
   const [valueEnd, setValueEnd] = React.useState(1);
-  let file = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update File'} showInfo={true} />
+  let file = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update File'} showInfo={true}/>
   let dumps = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update Dumps'} />
   let mathops = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Mathops'} />
   let ligero = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'File Ligero'} />
+
+
+    return (
+      <div>
+        <h1>Status</h1>
+        {docs.map(dc => (
+          <div key={dc.id}>
+            {(() => {
+              if (dc.FILE === 'SI'){
+                  return (
+                      file
+                  )
+              }
+            })()}
+            {(() => {
+              if (dc.DUMP === 'SI'){
+                  return (
+                      dumps
+                  )
+              }
+            })()}
+            {(() => {
+              if (dc.MATHOPS === 'SI'){
+                  return (
+                      mathops
+                  )
+              }
+            })()}
+            {(() => {
+              if (dc.LIGHTWEIGHT === 'SI'){
+                  return (
+                      ligero
+                  )
+              }
+            })()}
+             
+            </div>
+        ))}
+      
+        </div>
+    )
 }
+export default Status;

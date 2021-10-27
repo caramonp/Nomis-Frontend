@@ -1,18 +1,28 @@
 @import '~antd/dist/antd.css';
 
-.logo {
-  float: left;
-  width: 120px;
-  height: 31px;
-  margin: 16px 24px 16px 0;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.ant-row-rtl .logo {
-  float: right;
-  margin: 16px 0 16px 24px;
-}
-
-.site-layout-background {
-  background: #fff;
-}
+.box-dragg-file {
+  max-width: 400px;
+  margin: 0 auto;
+ }
+ 
+ .title-tax-engine {
+   background-color: #2a6662;
+   margin-bottom: 50px;
+   margin-top: -50px;
+   height: 70px;
+   width: 150%;
+   margin-left: -100px;
+   border-radius: 15px;
+ }
+ 
+ .letter-title {
+   color: white;
+   display: contents;
+   align-content: center;
+   font-size:xx-large;
+   font-weight: 500;
+ }
+ 
+ .anticon svg{
+   color: #2a6662;
+ }

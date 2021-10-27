@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import './LightweightFile.css';
 import { Upload, message } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
+import SelectBoton from './SelectBoton';
 
 const { Dragger } = Upload;
 
@@ -34,6 +35,11 @@ const LightweightFileComponent = () => {
         </p>
       </section>
       <hr />
+      <h1>¿Realizaste alguna modificación en archivo liviano?</h1>
+      <div className="select-botton">
+        <SelectBoton />
+      </div>
+      <br></br>
       <Dragger {...LightweightFile}>
       <p className="ant-upload-drag-icon">
         <InboxOutlined />
@@ -43,6 +49,7 @@ const LightweightFileComponent = () => {
         Este espacio es específico para el Tax Engine liviano .xlsx
       </p>
     </Dragger>
+    <br></br>
     </div>
   )
 }

@@ -11,7 +11,7 @@ const UpdateDumpComponent = () => {
           Actualización
         </p>
       </section>
-      <h2>¿Realizaste actualización de volcado?</h2>
+      <h2>¿Hiciste alguna modificación en el Dump?</h2>
       <div className="select-button">
         <SelectButton />
       </div>

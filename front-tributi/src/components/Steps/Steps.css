@@ -1,0 +1,25 @@
+@import "~antd/dist/antd.css";
+
+.steps-content {
+  min-height: 250px;
+  padding-top: 80px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.steps-action {
+  width: 50%;
+  border-top-style: double;
+  display: flex;
+  justify-content: center;
+  margin-left: 25%;
+  margin-right: 25%;
+
+}
+.steps-item-icon {
+  background-color: red;
+}
+
+Button {
+  border-radius: 15px;
+}

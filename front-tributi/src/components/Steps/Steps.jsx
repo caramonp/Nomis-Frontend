@@ -6,6 +6,7 @@ import TaxFile from '../TaxFile/TaxFile';
 import LightweightFileComponent from '../LightweightFile/LightweightFile'
 import UpdateDump from '../UpdateDump/UpdateDump';
 import Mathops from '../Mathops/Mathops';
+import ConfigFile from '../ConfigFile/ConfigFile'
 
 
 const { Step } = Steps;
@@ -30,7 +31,7 @@ export const steps = [
   },
   {
     title: 'Configuration',
-    content: 'Last-content',
+    content: <ConfigFile />,
   },
 ];
 const StepComponent = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './UpdateDump.css';
-import { Button } from 'antd';
+import SelectButton from './SelectButton';
 
 const UpdateDumpComponent = () => {
   return (
@@ -11,8 +11,11 @@ const UpdateDumpComponent = () => {
           Actualización
         </p>
       </section>
-    <Button type="primary">Si</Button>
-    <Button>No</Button>
+      <hr />
+      <h1>¿Realizaste actualización de volcado?</h1>
+      <div className="select-button">
+        <SelectButton />
+      </div>
     </div>
   )
 }

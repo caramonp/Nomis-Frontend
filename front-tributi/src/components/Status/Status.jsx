@@ -4,6 +4,7 @@ import firestore from '../../config/firebase';
 import 'firebase/firestore'
 import 'firebase/compat/firestore';
 import './Status.css'
+import Circle from './Circle';
 
 
 export const Status = (props) => {
@@ -32,10 +33,10 @@ export const Status = (props) => {
 
 
     return (
-      <div>
-        <h1>Status</h1>
+      <div className="Status"> 
+        <h1 className="title-Status"> Api Status</h1>
         {docs.map(dc => (
-          <div key={dc.id}>
+          <div className="Acceso-datos"key={dc.id}>
             {(() => {
               if (dc.FILE === 'SI'){
                   return (
@@ -74,7 +75,13 @@ export const Status = (props) => {
         <br />
         
         <button onClick={() => setValueEnd(valueEnd + 10)}>Change valueEnd</button>
+        <br />
+        <div>
+        <Circle/>
+        
         </div>
+        </div>
+      
     )
 }
 export default Status;

@@ -1,4 +1,4 @@
-import { Progress } from 'antd';
+import { Alert, Progress } from 'antd';
 import React, { useState, useEffect}from 'react'
 import firestore from '../../config/firebase';
 import 'firebase/firestore'
@@ -62,17 +62,29 @@ export const Status = (props) => {
              
             </div>
         ))}
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        
         <button className="Button-Start" onClick={() => setValueEnd(valueEnd + 10)}>Start</button>
         <br />
         <div>
-        <Circle/>
-        
+          {(() => {
+              if (valueEnd < 100){
+                  return (
+                       <Circle/>
+                  )
+              }
+          })()}
+          {(() => {
+              if (valueEnd == 111){
+                return (
+                   <Alert
+                        message="Succes"
+                        description="The Update Process Was Successful."
+                        type="success"
+                    showIcon
+                    closable
+                      />
+                  )
+              }
+          })()}
         </div>
         </div>
       

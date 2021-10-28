@@ -1,6 +1,6 @@
 .ant-progress-inner:not(.ant-progress-circle-gradient)
   .ant-progress-circle-path {
-  stroke: #2a6662;
+  stroke: #0b8f86;
 }
 
 .ant-progress {
@@ -63,9 +63,44 @@ h1 {
 
 .Button-Start {
   color: white;
-  background-color: #2a6662;
+  background-color: #0d7a73;
   margin: 0;
   position: absolute;
-  top: 85%;
-  left: 48.5%;
+  top: 80%;
+  left: 44.69%;
+  width: 150px;
+}
+
+.ant-alert {
+  box-sizing: border-box;
+  margin: 5px;
+  padding: -20;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 5;
+  width: 700px;
+  position: relative;
+  display: flex;
+  left: 21%;
+  align-items: center;
+  border: 1px;
+  background-color: #d5f0f1;
+  font-family: sans-serif;
+}
+
+.ant-alert-with-description .ant-alert-icon {
+  margin-right: 100 px;
+  font-size: 60px;
+}
+
+.ant-alert-description {
+  display: none;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.ant-alert-with-description .ant-alert-message {
+  display: block;
+  color: #000000;
+  font-size: 20px;
+  font-family: sans-serif;
 }

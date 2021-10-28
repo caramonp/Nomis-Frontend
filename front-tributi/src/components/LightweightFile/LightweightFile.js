@@ -9,19 +9,29 @@ const { Dragger } = Upload;
 
 const LightweightFile = {
   name: 'file',
-  multiple: true,
-  action: 'https://run.mocky.io/v3/e6d84e3d-f56e-4322-a2b4-7becaf0bb06a',
   onChange(info) {
     const { status } = info.file;
     if (status !== 'uploading') {
       console.log(info.file, info.fileList);
     }
     if (status === 'done') {
+
+        // Create an object of formData
+        const formData = new FormData();
+      
+        // Update the formData object
+        formData.append(
+          "myFile",
+          this.state.file,
+          this.state.file.name
+        );
+        console.log(this.state.selectedFile);
       message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === 'error') {
+   } else if (status === 'error') {
       message.error(`${info.file.name} file upload failed.`);
     }
   },
+
   onDrop(e) {
     console.log('Dropped files', e.dataTransfer.files);
   },
@@ -40,7 +50,7 @@ const LightweightFileComponent = () => {
         <SelectBoton />
       </div>
       <br></br>
-      <Dragger {...LightweightFile}>
+      <Dragger {...LightweightFile} type="file" ID="fileSelect" accept=".xlsx, .xls, .csv">
       <p className="ant-upload-drag-icon">
         <InboxOutlined />
       </p>

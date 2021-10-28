@@ -1,6 +1,6 @@
 .ant-progress-inner:not(.ant-progress-circle-gradient)
   .ant-progress-circle-path {
-  stroke: #096170ad;
+  stroke: #2a6662;
 }
 
 .ant-progress {
@@ -23,8 +23,21 @@ h1 {
   background-color: white;
   border: 1px solid #3a9e97;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  height: 60px;
+  width: 100%;
+  margin-left: 5px;
+  border-radius: 15px;
 }
 
+.title-Status {
+  color: white;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .ant-progress-circle .ant-progress-text {
   position: absolute;
   top: 50%;
@@ -39,4 +52,20 @@ h1 {
   text-align: center;
   transform: translate(-50%, -50%);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.jOIoms {
+  display: inline-block;
+  position: relative;
+  width: 50 px;
+  height: 200 px;
+}
+
+button {
+  color: white;
+  background-color: #2a6662;
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
 }

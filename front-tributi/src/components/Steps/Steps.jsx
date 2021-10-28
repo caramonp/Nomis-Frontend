@@ -4,6 +4,9 @@ import React from 'react'
 import './Steps.css'
 import TaxFile from '../TaxFile/TaxFile';
 import LightweightFileComponent from '../LightweightFile/LightweightFile'
+import UpdateDump from '../UpdateDump/UpdateDump';
+import Mathops from '../Mathops/Mathops';
+import ConfigFile from '../ConfigFile/ConfigFile'
 
 
 const { Step } = Steps;
@@ -16,11 +19,11 @@ export const steps = [
   },
   {
     title: 'Update Dump',
-    content: 'Second-content',
+    content: <UpdateDump />,
   },
   {
     title: 'Generate Mathops',
-    content: 'Last-content',
+    content: <Mathops />,
   },
   {
     title: 'Lightweight file',
@@ -28,7 +31,7 @@ export const steps = [
   },
   {
     title: 'Configuration',
-    content: 'Last-content',
+    content: <ConfigFile />,
   },
 ];
 const StepComponent = () => {

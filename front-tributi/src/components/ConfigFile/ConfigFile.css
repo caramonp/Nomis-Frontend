@@ -1,0 +1,29 @@
+@import '~antd/dist/antd.css';
+
+.box-dragg-file {
+  max-width: 400px;
+  margin: 0 auto;
+ }
+
+ .title-update-dump {
+   background-color: #2a6662;
+   margin-bottom: 50px;
+   margin-top: -50px;
+   height: 60px;
+   width: 150%;
+   margin-left: -100px;
+   border-radius: 15px;
+ }
+
+ .letter-title {
+   color: white;
+   font-size:xx-large;
+   font-weight: 500;
+   display         : flex;
+   justify-content : center;
+   align-items     : center;
+ }
+
+ .anticon svg{
+   color: #2a6662;
+ }

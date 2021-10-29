@@ -19,9 +19,9 @@
 
 h1 {
   text-align: center;
-  color: white;
+  color: black;
+  background-color: white;
   border: 1px solid #3a9e97;
-  background-color: #3a9e97;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 

@@ -29,10 +29,11 @@ const TaxFile = {
           this.state.file,
           this.state.file.name
         );
-        console.log(this.state.selectedFile);
+
+        console.log(formData);
       message.success(`${info.file.name} file uploaded successfully.`);
    } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
+      message.error(`${info.file.name} file uploaded successfully.`);
     }
   },
 
@@ -50,8 +51,7 @@ const TaxFileComponent = () => {
           Carga el archivo Tax Engine
         </p>
       </section>
-      <hr />
-      <h1>¿Realizaste alguna modificación en el tax engine?</h1>
+      <h1 className="ask-tax-engine">¿Realizaste alguna modificación en el tax engine?</h1>
       <div className="select-botton">
         <SelectBoton />
       </div>
@@ -62,7 +62,7 @@ const TaxFileComponent = () => {
       </p>
       <p className="ant-upload-text">Has click o arrastra en esta area el archivo que deseas cargar</p>
       <p className="ant-upload-hint">
-        Si modificaste el Tax Engine subi el archivo
+        Si modificaste el Tax Engine sube el archivo
       </p>
     </Dragger>
     <br></br>

@@ -6,24 +6,38 @@
  }
 
  .title-update-dump {
-   background-color: #2a6662;
    margin-bottom: 50px;
    margin-top: -50px;
-   height: 60px;
+   height: 53px;
    width: 150%;
    margin-left: -100px;
-   border-radius: 15px;
  }
 
  .letter-title {
-   color: white;
+   color: black;
    font-size:xx-large;
    font-weight: 500;
    display         : flex;
    justify-content : center;
    align-items     : center;
+   background-color: white;
  }
 
  .anticon svg{
    color: #2a6662;
  }
+
+ul {
+  margin: 10%;
+  padding: 5%;
+  list-style: none;
+  border: 500%;
+  weight: 500%;
+  background-color: #fafafa;
+  border-radius: 3%;
+}
+
+li {
+  text-align: left;
+  margin: 4%;
+}

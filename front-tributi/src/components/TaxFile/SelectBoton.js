@@ -3,7 +3,7 @@ import React from 'react';
 
 class SelectBoton extends React.Component {
   state = {
-    value: "si",
+    value: "none",
   };
 
   onChange = e => {

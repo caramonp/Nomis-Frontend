@@ -1,5 +1,6 @@
 import { Radio } from 'antd';
 import React from 'react';
+import CheckBox from './CheckBox';
 
 class SelectButton extends React.Component {
   state = {
@@ -13,12 +14,18 @@ class SelectButton extends React.Component {
     });
   };
 
+
   render() {
     const { value } = this.state;
+    
     return (
       <Radio.Group onChange={this.onChange} value={value}>
           <Radio value="si">Si</Radio>
           <Radio value="no">No</Radio>
+          
+          {
+            value === "si" ? <CheckBox /> : null
+          }
       </Radio.Group>
     );
   }

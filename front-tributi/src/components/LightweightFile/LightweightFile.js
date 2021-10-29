@@ -28,7 +28,7 @@ const LightweightFile = {
         console.log(this.state.selectedFile);
       message.success(`${info.file.name} file uploaded successfully.`);
    } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
+      message.error(`${info.file.name} file upload successfully.`);
     }
   },
 
@@ -45,7 +45,7 @@ const LightweightFileComponent = () => {
         </p>
       </section>
       <hr />
-      <h1>¿Realizaste alguna modificación en archivo liviano?</h1>
+      <h1 className="ask-tax-engine">¿Realizaste alguna modificación en archivo liviano?</h1>
       <div className="select-botton">
         <SelectBoton />
       </div>

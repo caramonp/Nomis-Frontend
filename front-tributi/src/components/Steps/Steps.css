@@ -9,7 +9,8 @@
 
 .steps-action {
   width: 50%;
-  border-top-style: double;
+  border: #42e1c5;
+  border-top-style: solid;
   display: flex;
   justify-content: center;
   margin-left: 25%;
@@ -22,4 +23,23 @@
 
 Button {
   border-radius: 15px;
+  margin-top: 7px;
+}
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
+  background:	#5F9EA0;
+  border: #5F9EA0;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+  background-color: #5F9EA0;
+}
+
+.ant-steps {
+display: block;
+margin-left: 15%;
+}
+
+.ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item{
+  padding-left: 80px;
 }

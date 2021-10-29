@@ -62,7 +62,7 @@ const StepComponent = () => {
       <div className="steps-content">{steps[current].content}</div>
       <div className="steps-action">
       {current > 0 && (
-          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+          <Button style={{ margin: '7px' }} onClick={() => prev()}>
             Previo
           </Button>
         )}

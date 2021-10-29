@@ -6,17 +6,13 @@
 }
 
 .title-tax-engine {
-  background-color: #2a6662;
-  margin-bottom: 50px;
-  margin-top: -50px;
   height: 60px;
   width: 150%;
   margin-left: -100px;
-  border-radius: 15px;
 }
 
 .letter-title {
-  color: white;
+  color: black;
   display: contents;
   align-content: center;
   font-size:xx-large;
@@ -26,4 +22,12 @@
 
 .anticon svg{
   color: #2a6662;
+}
+
+.ask-tax-engine {
+  background-color: white;
+  color: black;
+  border-style: none;
+  font-size: 1.5em;
+  margin-top: -10%;
 }

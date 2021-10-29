@@ -18,8 +18,8 @@ const SelectYear = () => {
   >
     <Option value="1">2021</Option>
     <Option value="2">2020</Option>
-    <Option value="2">2019</Option>
-    <Option value="2">2018</Option>
+    <Option value="3">2019</Option>
+    <Option value="4">2018</Option>
 
   </Select>
   )

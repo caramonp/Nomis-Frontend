@@ -1,5 +1,6 @@
-import { Alert, Progress } from 'antd';
-import React, { useState, useEffect}from 'react'
+import { Alert, Progress, Button } from 'antd';
+import React, { useState, useEffect } from 'react'
+import { useHistory } from "react-router-dom";
 import firestore from '../../config/firebase';
 import 'firebase/firestore'
 import 'firebase/compat/firestore';
@@ -7,9 +8,10 @@ import './Status.css'
 import Circle from './Circle';
 
 
-export const Status = (props) => {
+const Status = () => {
 
   const [docs, setdocs] = useState([])
+  const history = useHistory();
 
   const getDocument = async () => {
     firestore.collection('Prueba_nomis').onSnapshot((querySnapshot) => {
@@ -25,6 +27,10 @@ export const Status = (props) => {
 		
   }, []);
 
+  const back = () => {
+    history.push('/');
+  }
+
   const [valueEnd, setValueEnd] = React.useState(1);
   let dumps = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update Dumps'} />
   let mathops = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Mathops'} />
@@ -33,7 +39,11 @@ export const Status = (props) => {
 
     return (
       <div className="Status"> 
-        <h1 className="title-Status"> Api Status</h1>
+        <section className="title-Status">
+        <p className="letter-title">
+        Api Status
+        </p>
+      </section>
         {docs.map(dc => (
           <div className="Acceso-datos" key={dc.id}>
             <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update File'} showInfo={true}/>
@@ -62,8 +72,13 @@ export const Status = (props) => {
              
             </div>
         ))}
-        <button className="Button-Start" onClick={() => setValueEnd(valueEnd + 10)}>Start</button>
-        <br />
+        
+        <div>
+        <Button className="Button-back" style={{ background: '#ffff'}} type="primary" onClick={back}> Regresar</Button>
+        </div>
+        <div>
+        <Button className="Button-Start" style={{ background: '#2a6662', border: '#2a6662' }} type="primary" onClick={() => setValueEnd(valueEnd + 10)}>Start</Button>
+        </div>
         <div>
           {(() => {
               if (valueEnd < 100){
@@ -85,6 +100,7 @@ export const Status = (props) => {
                   )
               }
           })()}
+          
         </div>
         </div>
       

@@ -16,27 +16,13 @@
   margin: 10px;
   width: auto;
 }
-
-h1 {
-  text-align: center;
-  color: black;
-  background-color: white;
-  border: 1px solid #3a9e97;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-bottom: 20px;
-  margin-top: -20px;
-  height: 60px;
-  width: 100%;
-  margin-left: 5px;
-  border-radius: 15px;
-}
-
 .title-Status {
-  color: white;
-  font-size: xx-large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #42e1c5;
+  margin-bottom: 50px;
+  margin-top: -20px;
+  height: 53px;
+  width: 50%;
+  margin-left: 350px;
 }
 .ant-progress-circle .ant-progress-text {
   position: absolute;
@@ -62,13 +48,25 @@ h1 {
 }
 
 .Button-Start {
-  color: white;
-  background-color: #0d7a73;
   margin: 0;
   position: absolute;
   top: 80%;
-  left: 44.69%;
-  width: 150px;
+  left: 51%;
+  width: 100px;
+}
+hr {
+  color: #42e1c5;
+  size: 150;
+  width: 200;
+}
+
+.Button-back {
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 43%;
+  width: 100px;
+  color: #000000;
 }
 
 .ant-alert {

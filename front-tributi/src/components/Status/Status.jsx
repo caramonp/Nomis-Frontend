@@ -88,7 +88,7 @@ const Status = () => {
               }
           })()}
           {(() => {
-              if (valueEnd == 111){
+              if (valueEnd === 111){
                 return (
                    <Alert
                         message="Succes"

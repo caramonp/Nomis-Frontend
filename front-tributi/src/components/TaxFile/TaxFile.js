@@ -1,6 +1,4 @@
 import React, { useState, useContext } from "react";
-import { Upload, message } from "antd";
-import { InboxOutlined } from "@ant-design/icons";
 import SelectYear from "./SelectYear";
 import SelectBoton from "./SelectBoton";
 import UploadFile from "./UploadFile";

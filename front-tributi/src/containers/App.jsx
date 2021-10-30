@@ -12,13 +12,10 @@ import StepComponent from '../components/Steps/Steps'
 import Status from '../components/Status/Status'
 import "../assets/static/logo (3).jpg"
 import Context from '../context'
-import Text from '../components/Text'
 
-//const Context=React.createContext("")
 
 function App() {
   const [state, setState] = useState(true)
-  //const Context=React.createContext(state)
   return (
   <Context.Provider value={{ state, setState }}>
     <MainContainer>

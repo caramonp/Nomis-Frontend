@@ -73,7 +73,7 @@ export const Status = (props) => {
               }
           })()}
           {(() => {
-              if (valueEnd == 111){
+              if (valueEnd === 111){
                 return (
                    <Alert
                         message="Succes"

@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,10 +11,13 @@ import MainContent from '../components/layout/MainContent/MainContent'
 import StepComponent from '../components/Steps/Steps'
 import Status from '../components/Status/Status'
 import "../assets/static/logo (3).jpg"
+import Context from '../context'
+
 
 function App() {
+  const [state, setState] = useState(true)
   return (
-
+  <Context.Provider value={{ state, setState }}>
     <MainContainer>
       <Header />
       <Router>
@@ -30,6 +34,7 @@ function App() {
       </Router>
       <Footer/>
     </MainContainer>
+  </Context.Provider>
     );
 }
 

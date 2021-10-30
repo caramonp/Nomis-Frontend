@@ -1,9 +1,10 @@
-import { Progress } from 'antd';
+import { Alert, Progress } from 'antd';
 import React, { useState, useEffect}from 'react'
 import firestore from '../../config/firebase';
 import 'firebase/firestore'
 import 'firebase/compat/firestore';
 import './Status.css'
+import Circle from './Circle';
 
 
 export const Status = (props) => {
@@ -25,24 +26,17 @@ export const Status = (props) => {
   }, []);
 
   const [valueEnd, setValueEnd] = React.useState(1);
-  let file = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update File'} showInfo={true}/>
   let dumps = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update Dumps'} />
   let mathops = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Mathops'} />
-  let ligero = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'File Ligero'} />
+  let ligero = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Lightweight File'} />
 
 
     return (
-      <div>
-        <h1>Status</h1>
+      <div className="Status"> 
+        <h1 className="title-Status"> Api Status</h1>
         {docs.map(dc => (
-          <div key={dc.id}>
-            {(() => {
-              if (dc.FILE === 'SI'){
-                  return (
-                      file
-                  )
-              }
-            })()}
+          <div className="Acceso-datos" key={dc.id}>
+            <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update File'} showInfo={true}/>
             {(() => {
               if (dc.DUMP === 'SI'){
                   return (
@@ -64,17 +58,36 @@ export const Status = (props) => {
                   )
               }
             })()}
+            <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Done'} />
              
             </div>
         ))}
+        <button className="Button-Start" onClick={() => setValueEnd(valueEnd + 10)}>Start</button>
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        
-        <button onClick={() => setValueEnd(valueEnd + 10)}>Change valueEnd</button>
+        <div>
+          {(() => {
+              if (valueEnd < 100){
+                  return (
+                       <Circle/>
+                  )
+              }
+          })()}
+          {(() => {
+              if (valueEnd == 111){
+                return (
+                   <Alert
+                        message="Succes"
+                        description="The Update Process Was Successful."
+                        type="success"
+                    showIcon
+                    closable
+                      />
+                  )
+              }
+          })()}
         </div>
+        </div>
+      
     )
 }
 export default Status;

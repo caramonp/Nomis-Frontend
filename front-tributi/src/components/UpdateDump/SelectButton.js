@@ -1,27 +1,17 @@
 import { Radio } from 'antd';
 import React from 'react';
 
-class SelectButton extends React.Component {
-  state = {
-    value: "none",
+const SelectButton = ({ setValue }) => {
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
-  onChange = e => {
-    console.log('radio checked', e.target.value);
-    this.setState({
-      value: e.target.value,
-    });
-  };
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Radio.Group onChange={this.onChange} value={value}>
-          <Radio value="si">Si</Radio>
-          <Radio value="no">No</Radio>
-      </Radio.Group>
-    );
-  }
-}
+  return (
+    <Radio.Group onChange={handleChange}>
+      <Radio value="true">Si</Radio>
+      <Radio value="false">No</Radio>
+    </Radio.Group>
+  );
+};
 
 export default SelectButton;

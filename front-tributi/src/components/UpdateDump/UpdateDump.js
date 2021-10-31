@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState, useContext } from "react";
 import 'antd/dist/antd.css';
-import './UpdateDump.css';
+import {Button} from 'antd';
 import SelectButton from './SelectButton';
+import Context from '../../context';
+import './UpdateDump.css';
 
 const UpdateDumpComponent = () => {
+  const [UpdateDump, setUpdateDump] = useState();
+  const context = useContext(Context)
+  const { state, setState } = context;
+
+  const handleClick = (e) => {
+    console.log(UpdateDump);
+    console.log("state", state)
+    setState({
+      ...state,
+      updateDump: {
+        updateDump: JSON.parse(UpdateDump),
+      }
+    })
+  };
   return (
     <div className="box-dragg-file">
       <section className="title-update-dump">
@@ -13,8 +29,9 @@ const UpdateDumpComponent = () => {
       </section>
       <h2>¿Hiciste alguna modificación en el Dump?</h2>
       <div className="select-button">
-        <SelectButton />
+        <SelectButton setValue={setUpdateDump} />
       </div>
+      <Button className="select-button-updateDump" style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={handleClick}>Guardar</Button>
     </div>
   )
 }

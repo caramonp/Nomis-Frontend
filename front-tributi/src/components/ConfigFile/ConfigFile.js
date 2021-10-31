@@ -13,10 +13,9 @@ const ConfigFileComponent = () => {
 	const { state, setState } = context;
 
 	const handleClick = () => {
-		console.log("state", state);
 		setState({
 			...state,
-			Configuration: { existChanges: button, optionChanges: checkbox },
+			configuration: { changedConfiguration: button, optionChanges: checkbox },
 		});
 	};
 

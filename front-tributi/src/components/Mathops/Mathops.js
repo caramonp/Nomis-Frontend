@@ -11,8 +11,6 @@ const MathopsComponent = () => {
   const { state, setState } = context;
 
   const handleClick = (e) => {
-    console.log(mathops);
-    console.log("state", state)
     setState({
       ...state,
       mathops: JSON.parse(mathops),

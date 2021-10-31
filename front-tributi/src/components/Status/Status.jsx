@@ -11,33 +11,72 @@ import Context from '../../context';
 const Status = () => {
 
   const context = useContext(Context);
-  const {state} = context;
+  const {state, setState} = context;
+  const {taxEngine, updateDump, mathops, lightweight, configuration} = state;
+  const {changedLightweight} = lightweight;
+  const {changedConfiguration} = configuration;
+  const {stateLoading} = state;
   const [docs, setdocs] = useState([])
   const history = useHistory();
-  console.log("estado", state)
 
+  const [percentTaxEngine, setPercentTaxEngine] = useState(0);
+  const [percentDump, setPercentDump] = useState(0);
+  const [percentMathops, setPercentMathops] = useState(0);
+  const [percentlightweight, setPercentlightweight] = useState(0);
+  const [percentConfig, setPercentConfig] = useState(0);
+
+  let timer = null;
+
+  const updateStatus = (status) => {
+    setPercentTaxEngine(10)
+    //console.log("percent tax", percentTaxEngine, valueEnd)
+    //timer = setInterval(loading, 10000)
+    /* switch(status) {
+      case 'tax-engine': updateStatus(status)
+    } */
+  }
+  
   const getDocument = async () => {
-    firestore.collection('Prueba_nomis').onSnapshot((querySnapshot) => {
+    firestore.collection('Status_upload_dump').onSnapshot((querySnapshot) => {
       const doct = []
       querySnapshot.forEach(doc => {
-        doct.push({ ...doc.data(), id: doc.id })
+        console.log("documento", doc.data());
+        console.log("value", valueEnd, state)
+        const {status} = doc.data();
+        updateStatus(status)
+        
+        //doct.push({ ...doc.data(), id: doc.id })
       });
       setdocs(doct)
     })
   }
   useEffect(() => {
     getDocument()
-		
+		/* setState({
+      ...state, stateLoading: {}
+    }) */
   }, []);
+
+  useEffect(() => {
+    console.log("percent tax engine desde useEffect", percentTaxEngine)
+    timer = setTimeout(() => {
+      setPercentTaxEngine(percentTaxEngine + 10)
+    }, 1000)
+    if (percentTaxEngine > 100){
+      clearTimeout(timer);
+    }
+  }, [percentTaxEngine]);
 
   const back = () => {
     history.push('/');
   }
 
   const [valueEnd, setValueEnd] = React.useState(1);
-  let dumps = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update Dumps'} />
-  let mathops = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Mathops'} />
-  let ligero = <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Lightweight File'} />
+  let TaxEngine = () => <Progress type="dashboard" percent={percentTaxEngine} status="active" gapDegree={0} format={() => 'Cargando archivo tax egine'} />
+  let Dump = () => <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Actualizando dump'} />
+  let Mathops = () => <Progress type="dashboard" percent={percentMathops} status="active" gapDegree={0} format={() => 'Actualizando mathops'} />
+  let Lightweight = () => <Progress type="dashboard" percent={percentlightweight} status="active" gapDegree={0} format={() => 'Cargando archivo liviano'} />
+  let Congif = () => <Progress type="dashboard" percent={percentConfig} status="active" gapDegree={0} format={() => 'Actualizando configuración'} />
 
 
     return (
@@ -47,34 +86,41 @@ const Status = () => {
         Api Status
         </p>
       </section>
-        {docs.map(dc => (
+      <div>
+        {taxEngine && <TaxEngine />}
+        {updateDump && <Dump />}
+        {mathops && <Mathops />}
+      {changedLightweight && <Lightweight />}
+      {changedConfiguration && <Congif />}
+      </div>
+        {/* {docs.map(dc => (
           <div className="Acceso-datos" key={dc.id}>
             <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update File'} showInfo={true}/>
             {(() => {
               if (dc.DUMP === 'SI'){
                   return (
-                      dumps
+                      Dump
                   )
               }
             })()}
             {(() => {
               if (dc.MATHOPS === 'SI'){
                   return (
-                      mathops
+                      Mathops
                   )
               }
             })()}
             {(() => {
               if (dc.LIGHTWEIGHT === 'SI'){
                   return (
-                      ligero
+                    Lightweight
                   )
               }
             })()}
             <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Done'} />
              
             </div>
-        ))}
+        ))} */}
         
         <div>
         <Button className="Button-back" style={{ background: '#ffff'}} type="primary" onClick={back}> Regresar</Button>

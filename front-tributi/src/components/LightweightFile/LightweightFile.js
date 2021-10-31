@@ -6,20 +6,16 @@ import UploadLightweightFile from "./UploadLightweightFile";
 import Context from '../../context';
 
 const LightweightFileComponent = () => {
-  const [Lightweight, setLightweight] = useState();
+  const [lightweight, setLightweight] = useState();
   const [file, setFile] = useState();
   const context = useContext(Context);
   const {state, setState} = context;
 
   const handleClick = (e) => {
-    console.log("Click");
-    console.log(Lightweight);
-    console.log(file)
-    console.log("state", state)
     setState({
       ...state,
-      Lightweight: {
-        Lightweight: JSON.parse(Lightweight),
+      lightweight: {
+        changedLightweight: JSON.parse(lightweight),
         file
       }
     })

@@ -36,6 +36,8 @@
   weight: 500%;
   background-color: #fafafa;
   border-radius: 3%;
+  display: flex;
+  flex-direction: column;
 }
 
 .ant-form {

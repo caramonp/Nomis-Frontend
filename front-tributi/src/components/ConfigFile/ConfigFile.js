@@ -16,7 +16,7 @@ const ConfigFileComponent = () => {
 		console.log("state", state);
 		setState({
 			...state,
-			Configuration: { button, checkbox },
+			Configuration: { existChanges: button, optionChanges: checkbox },
 		});
 	};
 
@@ -27,15 +27,13 @@ const ConfigFileComponent = () => {
 			</section>
 			<h2> Seleccione los cambios en la configuración</h2>
 			<div>
-				<Form>
-					<Form.Item className="select-button">
-						<SelectButton setValue={setButton} />
-						{button === true ? <CheckBox setValue={setCheckbox} /> : null}
-					</Form.Item>
-					<Form.Item>
-						<Button onClick={handleClick}>Guardar</Button>
-					</Form.Item>
-				</Form>
+				<div className="select-button">
+					<SelectButton setValue={setButton} />
+					{button === true ? <CheckBox setValue={setCheckbox} /> : null}
+				</div>
+				<Button type="primary" onClick={handleClick}>
+					Guardar
+				</Button>
 			</div>
 		</div>
 	);

@@ -15,9 +15,7 @@ const MathopsComponent = () => {
     console.log("state", state)
     setState({
       ...state,
-      mathops: {
-        mathops: JSON.parse(mathops),
-      }
+      mathops: JSON.parse(mathops),
     })
   };
 

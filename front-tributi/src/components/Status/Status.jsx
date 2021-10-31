@@ -1,17 +1,20 @@
+import React, { useState, useEffect, useContext } from 'react'
 import { Alert, Progress, Button } from 'antd';
-import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import firestore from '../../config/firebase';
 import 'firebase/firestore'
 import 'firebase/compat/firestore';
 import './Status.css'
 import Circle from './Circle';
-
+import Context from '../../context';
 
 const Status = () => {
 
+  const context = useContext(Context);
+  const {state} = context;
   const [docs, setdocs] = useState([])
   const history = useHistory();
+  console.log("estado", state)
 
   const getDocument = async () => {
     firestore.collection('Prueba_nomis').onSnapshot((querySnapshot) => {

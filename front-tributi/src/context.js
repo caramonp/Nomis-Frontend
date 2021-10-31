@@ -1,3 +1,3 @@
 import React from 'react';
-const Context=React.createContext("miValor")
+const Context=React.createContext({})
 export default Context

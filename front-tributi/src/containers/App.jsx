@@ -15,7 +15,11 @@ import Context from '../context'
 
 
 function App() {
-  const [state, setState] = useState(true)
+  const [state, setState] = useState({
+    stateLoading: {
+      percentTaxEngine: 0
+    }
+  })
   return (
   <Context.Provider value={{ state, setState }}>
     <MainContainer>

@@ -6,18 +6,16 @@ import Context from '../../context';
 import './UpdateDump.css';
 
 const UpdateDumpComponent = () => {
-  const [UpdateDump, setUpdateDump] = useState();
+  const [updateDump, setUpdateDump] = useState();
   const context = useContext(Context)
   const { state, setState } = context;
 
   const handleClick = (e) => {
-    console.log(UpdateDump);
+    console.log(updateDump);
     console.log("state", state)
     setState({
       ...state,
-      updateDump: {
-        updateDump: JSON.parse(UpdateDump),
-      }
+      updateDump: JSON.parse(updateDump),
     })
   };
   return (

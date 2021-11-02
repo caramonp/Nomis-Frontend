@@ -47,13 +47,6 @@
   height: 200 px;
 }
 
-.Button-Start {
-  margin: 0;
-  position: absolute;
-  top: 80%;
-  left: 51%;
-  width: 100px;
-}
 hr {
   color: #42e1c5;
   size: 150;
@@ -64,41 +57,28 @@ hr {
   margin: 0;
   position: absolute;
   top: 80%;
-  left: 43%;
+  left: 48%;
   width: 100px;
   color: #000000;
 }
 
 .ant-alert {
   box-sizing: border-box;
-  margin: 5px;
-  padding: -20;
+  margin: 0;
+  padding: 0;
   color: rgba(0, 0, 0, 0.85);
-  line-height: 5;
-  width: 700px;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum", "tnum";
   position: relative;
   display: flex;
-  left: 21%;
   align-items: center;
-  border: 1px;
-  background-color: #d5f0f1;
-  font-family: sans-serif;
-}
-
-.ant-alert-with-description .ant-alert-icon {
-  margin-right: 100 px;
-  font-size: 60px;
-}
-
-.ant-alert-description {
-  display: none;
-  font-size: 20px;
-  line-height: 30px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-.ant-alert-with-description .ant-alert-message {
-  display: block;
-  color: #000000;
-  font-size: 20px;
-  font-family: sans-serif;
+  padding: 8 px 15 px;
+  word-wrap: break-word;
+  border-radius: 2 px;
+  width: 225px;
+  top: 50px;
+  left: 570px;
 }

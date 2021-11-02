@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Alert, Progress, Button } from "antd";
+import { Alert, Progress, Button, message} from "antd";
 import { useHistory } from "react-router-dom";
 import firestore from "../../config/firebase";
 import "firebase/firestore";
@@ -162,35 +162,6 @@ const Status = () => {
         {changedLightweight && <Lightweight />}
         {changedConfiguration && <Congif />}
       </div>
-      {/* {docs.map(dc => (
-          <div className="Acceso-datos" key={dc.id}>
-            <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Update File'} showInfo={true}/>
-            {(() => {
-              if (dc.DUMP === 'SI'){
-                  return (
-                      Dump
-                  )
-              }
-            })()}
-            {(() => {
-              if (dc.MATHOPS === 'SI'){
-                  return (
-                      Mathops
-                  )
-              }
-            })()}
-            {(() => {
-              if (dc.LIGHTWEIGHT === 'SI'){
-                  return (
-                    Lightweight
-                  )
-              }
-            })()}
-            <Progress type="dashboard" percent={valueEnd} status="active" gapDegree={0} format={() => 'Done'} />
-             
-            </div>
-        ))} */}
-
       <div>
         <Button
           className="Button-back"
@@ -203,16 +174,6 @@ const Status = () => {
         </Button>
       </div>
       <div>
-        <Button
-          className="Button-Start"
-          style={{ background: "#2a6662", border: "#2a6662" }}
-          type="primary"
-          onClick={() => setValueEnd(valueEnd + 10)}
-        >
-          Start
-        </Button>
-      </div>
-      <div>
         {(() => {
           if (statusFirebase != "finished") {
             return <Circle />;
@@ -220,17 +181,12 @@ const Status = () => {
         })()}
         {(() => {
           if (statusFirebase === "finished") {
-            return (
-              <Alert
-                message="Succes"
-                description="The Update Process Was Successful."
-                type="success"
-                showIcon
-                closable
-              />
-            );
+            return <>
+              <Alert message="Proceso completado con exito!!" type="success" showIcon />
+              </>
           }
         })()}
+        <success/>
       </div>
     </div>
   );

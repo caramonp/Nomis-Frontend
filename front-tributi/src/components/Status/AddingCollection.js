@@ -6,7 +6,7 @@ import Form from './Form';
 const AddingCollection = () => {
 
 	const addOrEdit = async (Object) => {
-		await firestore.collection('Prueba_nomis').doc().set(Object)
+		await firestore.collection('Status_upload_dump').doc("status").set(Object)
 		alert("Se creo documento correctamente")	
 	}
 	

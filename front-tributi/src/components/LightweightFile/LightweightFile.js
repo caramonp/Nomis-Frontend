@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import 'antd/dist/antd.css';
 import './LightweightFile.css';
+import {Button} from 'antd';
 import SelectBoton from './SelectBoton';
 import UploadLightweightFile from "./UploadLightweightFile";
 import Context from '../../context';
@@ -35,7 +36,7 @@ const LightweightFileComponent = () => {
       <br></br>
       <UploadLightweightFile setFile={setFile}/>
       <br></br>
-      <button className="select-button-lightweight" style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={handleClick}>Guardar</button>
+      <Button className="select-button-lightweight" style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={handleClick}>Guardar</Button>
       <br></br>
     </div>
   );

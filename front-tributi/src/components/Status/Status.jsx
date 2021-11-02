@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Alert, Progress, Button, message} from "antd";
+import { Alert, Progress, Button } from "antd";
 import { useHistory } from "react-router-dom";
 import firestore from "../../config/firebase";
 import "firebase/firestore";
@@ -10,12 +10,11 @@ import Context from "../../context";
 
 const Status = () => {
   const context = useContext(Context);
-  const { state, setState } = context;
+  const { state } = context;
   const { taxEngine, updateDump, mathops, lightweight, configuration } = state;
   const { changedLightweight } = lightweight;
   const { changedConfiguration } = configuration;
-  const { stateLoading } = state;
-  const [docs, setdocs] = useState([]);
+  //const [docs, setdocs] = useState([]);
   const history = useHistory();
   const [statusFirebase, setStatusFirebase] = useState();
 
@@ -41,14 +40,14 @@ const Status = () => {
   const getDocument = async () => {
     firestore.collection("Status_upload_dump").onSnapshot((querySnapshot) => {
       let currentStatus = "";
-      const doct = [];
+      //const doct = [];
       querySnapshot.forEach((doc) => {
         //console.log("documento", doc.data());
         //console.log("value", valueEnd, state)
         const { status } = doc.data();
         currentStatus = status;
       });
-      setdocs(doct);
+      //setdocs(doct);
       setStatusFirebase(currentStatus);
     });
   };
@@ -61,13 +60,14 @@ const Status = () => {
     console.log("useEfect: ", statusFirebase, percent);
     const { percentTaxEngine, percentDump, percentMathops, percentlightweight, percentConfig } = percent;
     const update = () => {
+      // eslint-disable-next-line
       timer = setTimeout(() => {
         let currentPercent = 0
 
         switch (statusFirebase) {
           case "tax-engine":
             currentPercent = percentTaxEngine >= 100 ? 10 : percentTaxEngine + 10;
-            setPercent({...percent, percentTaxEngine:currentPercent})
+            setPercent({...percent, percentTaxEngine:currentPercent, percentConfig: 0})
             //setPercentTaxEngine(percent)
             break;
           case "dump":
@@ -86,6 +86,8 @@ const Status = () => {
             currentPercent = percentConfig >= 100 ? 10 : percentConfig + 10;
             setPercent({...percent, percentConfig:currentPercent, percentlightweight:100})
           break;
+        
+          default: currentPercent = 0;
         }
       }, 1000);
   
@@ -103,7 +105,6 @@ const Status = () => {
     history.push("/");
   };
 
-  const [valueEnd, setValueEnd] = React.useState(1);
   let TaxEngine = () => (
     <Progress
       type="dashboard"
@@ -175,7 +176,7 @@ const Status = () => {
       </div>
       <div>
         {(() => {
-          if (statusFirebase != "finished") {
+          if (statusFirebase !== "finished") {
             return <Circle />;
           }
         })()}

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Button, Form } from "antd";
+import { Button } from "antd";
 import "antd/dist/antd.css";
 import "./ConfigFile.css";
 import SelectButton from "./SelectButton";
@@ -30,7 +30,7 @@ const ConfigFileComponent = () => {
 					<SelectButton setValue={setButton} />
 					{button === true ? <CheckBox setValue={setCheckbox} /> : null}
 				</div>
-				<Button className="config-button"type="primary" onClick={handleClick}>
+				<Button className="config-button" type="primary" onClick={handleClick}>
 					Guardar
 				</Button>
 			</div>

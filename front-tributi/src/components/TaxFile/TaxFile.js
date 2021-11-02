@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import {Button} from 'antd';
 import SelectYear from "./SelectYear";
 import SelectBoton from "./SelectBoton";
 import UploadFile from "./UploadFile";
@@ -81,7 +82,7 @@ const TaxFileComponent = () => {
       <div className="select-year">
         <SelectYear setValue={setYear} />
       </div>
-      <button className="select-button-engine" style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={handleClick}>Guardar</button>
+      <Button className="select-button-engine" style={{ background: '#2a6662', border: '#2a6662'}} onClick={handleClick}>Guardar</Button>
       <br></br>
     </div>
   );

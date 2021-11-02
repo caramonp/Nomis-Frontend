@@ -12,6 +12,7 @@ import StepComponent from '../components/Steps/Steps'
 import Status from '../components/Status/Status'
 import "../assets/static/logo (3).jpg"
 import Context from '../context'
+import AddingCollection from '../components/Status/AddingCollection';
 
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path='/status'>
             <Status />
+              </Route>
+          <Route exact path='/Admin'>
+            <AddingCollection />
           </Route>
           </MainContent>
         </Switch>

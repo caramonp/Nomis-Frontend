@@ -7,9 +7,7 @@ const Form = (props) => {
   
 
   const initialStateValues = {
-    documento: "",
-    key: "",
-    value: "",
+    status: "",
    };
   
   const [values, setValues] = useState(initialStateValues);
@@ -32,37 +30,13 @@ const Form = (props) => {
         <input
 
           type="text"
-          placeholder="Añade documento"
-          name="documento"
+          placeholder="Añade Status"
+          name="status"
           onChange={handleInputChange}
-          value={values.documento}
+          value={values.status}
         />
       </div>
-      <div className="form-group input-group">
-        <div className="input-group-text bg-light">
-          <i className="material-icons">create</i>
-        </div>
-        <input
-          type="text"
-          name="key"
-          placeholder="key"
-          onChange={handleInputChange}
-          value={values.key}
-        />
-      </div>
-      <div className="form-group input-group">
-        <div className="input-group-text bg-light">
-          <i className="material-icons">create</i>
-        </div>
-        <input
-          type="text"
-          name="value"
-          placeholder="value"
-          onChange={handleInputChange}
-          value={values.value}
-        />
-      </div>
-      <button className="btn btn-primary center-block ">
+            <button className="btn btn-primary center-block ">
         Save
       </button>
     </form>

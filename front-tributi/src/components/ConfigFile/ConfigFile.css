@@ -44,3 +44,9 @@
   margin: 20px;
   padding: 10px;
 }
+
+.config-button {
+  background: #2a6662;
+  border-color:#2a6662;
+  margin-bottom: 10px;
+}

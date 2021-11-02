@@ -30,7 +30,7 @@ const ConfigFileComponent = () => {
 					<SelectButton setValue={setButton} />
 					{button === true ? <CheckBox setValue={setCheckbox} /> : null}
 				</div>
-				<Button type="primary" onClick={handleClick}>
+				<Button className="config-button"type="primary" onClick={handleClick}>
 					Guardar
 				</Button>
 			</div>

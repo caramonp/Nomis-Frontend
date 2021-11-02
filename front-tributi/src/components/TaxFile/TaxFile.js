@@ -81,7 +81,7 @@ const TaxFileComponent = () => {
       <div className="select-year">
         <SelectYear setValue={setYear} />
       </div>
-      <button onClick={handleClick}>Guardar</button>
+      <button className="select-button-engine" style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={handleClick}>Guardar</button>
       <br></br>
     </div>
   );

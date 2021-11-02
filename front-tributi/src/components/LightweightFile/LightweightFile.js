@@ -35,7 +35,7 @@ const LightweightFileComponent = () => {
       <br></br>
       <UploadLightweightFile setFile={setFile}/>
       <br></br>
-      <button onClick={handleClick}>Guardar</button>
+      <button className="select-button-lightweight" style={{ background: '#2a6662', border: '#2a6662'}} type="primary" onClick={handleClick}>Guardar</button>
       <br></br>
     </div>
   );

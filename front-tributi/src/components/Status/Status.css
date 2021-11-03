@@ -57,7 +57,7 @@ hr {
   margin: 0;
   position: absolute;
   top: 80%;
-  left: 48%;
+  left: 46.5%;
   width: 100px;
   color: #000000;
 }
@@ -79,6 +79,12 @@ hr {
   word-wrap: break-word;
   border-radius: 2 px;
   width: 225px;
-  top: 50px;
-  left: 570px;
+  top: 80px;
+  left: 560px;
+  border: salmon;
+}
+
+.ant-alert-success {
+  background-color: #f6ffed;
+  border: 1 px solid #b7eb8f;
 }

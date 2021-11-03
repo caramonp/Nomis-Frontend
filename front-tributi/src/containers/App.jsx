@@ -34,7 +34,7 @@ function App() {
           <Route exact path='/status'>
             <Status />
               </Route>
-          <Route exact path='/Admin'>
+          <Route exact path='/admin'>
             <AddingCollection />
           </Route>
           </MainContent>
